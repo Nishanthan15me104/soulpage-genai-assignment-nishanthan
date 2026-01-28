@@ -1,0 +1,21 @@
+# Core LLM / Agent stack (LOOSE)
+langchain
+langchain-core
+langchain-community
+langchain-groq
+langgraph
+
+# Utilities
+pydantic>=2.7
+python-dotenv
+duckduckgo-search
+yfinance
+opik
+streamlit
+ddgs
+fastapi
+uvicorn
+langgraph[sqlite]
+
+
+
