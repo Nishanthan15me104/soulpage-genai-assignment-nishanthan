@@ -6,6 +6,8 @@ from langchain_core.messages import SystemMessage, HumanMessage
 from src.state import AgentState, CompanyResearchDoc, StockData, NewsItem, AnalystReport
 from src.data.mock_db import get_mock_data
 
+from opik import track # NEW IMPORT
+
 import os
 from dotenv import load_dotenv
 
@@ -49,6 +51,7 @@ def supervisor_node(state: AgentState):
         return "analyst"
     return "end"
 
+@track(name="Data Collector Agent") # ADD THIS
 def data_collector_node(state: AgentState):
     company = state["company_name"]
     print(f"--- 🕵️‍♂️ COLLECTOR: Gathering for {company} ---")
@@ -68,6 +71,8 @@ def data_collector_node(state: AgentState):
         
     return {"research_data": research}
 
+
+@track(name="Analyst Agent") # ADD THIS
 def analyst_node(state: AgentState):
     print(f"--- 🧠 ANALYST: Reasoning for {state['company_name']} ---")
     data = state["research_data"]
