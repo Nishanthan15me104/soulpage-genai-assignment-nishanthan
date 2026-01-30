@@ -70,7 +70,7 @@ We use **per-session memory** with `ConversationBufferMemory`:
 
 ```
 git clone https://github.com/Nishanthan15me104/soulpage-genai-assignment-nishanthan.git
-cd conversational-knowledge-bot
+cd soulpage-genai-assignment-nishanthan\conversational-knowledge-bot
 
 python -m venv venv
 # Windows
@@ -84,6 +84,17 @@ pip install -r requirements.txt
 ### Configure environment
 
 - Set Groq API key and model in src/config/settings.py:
+
+-sample .env in root
+```
+GROQ_API_KEY=""
+
+COMET_API_KEY=""   (optional)
+
+OPIK_PROJECT_NAME=""(optional)
+
+OPIK_WORKSPACE=""(optional)
+```
 
 ### Run FatAPI
 

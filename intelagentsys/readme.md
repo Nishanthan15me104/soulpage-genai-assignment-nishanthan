@@ -106,11 +106,19 @@ pip install -r requirements.txt
 ```
 
 ### Environment Variables
+
+- sample .env in root
 ```
-GROQ_API_KEY=your_groq_api_key
-COMET_API_KEY=your_comet_api_key   # Optional (for Opik)
-OPIK_PROJECT_NAME=agentic-research # Optional
+GROQ_API_KEY=""
+
+COMET_API_KEY=""   (optional)
+
+OPIK_PROJECT_NAME=""(optional)
+
+OPIK_WORKSPACE=""(optional)
 ```
+
+
 ### Running the Application
 
 Start FastAPI Backend
