@@ -31,8 +31,7 @@ conversational-knowledge-bot/
 └── .gitignore
 ```
 
-## 🏗️ Architecture Overview
-
+##  Architecture Overview
 
 
 **Flow:**
@@ -47,7 +46,7 @@ conversational-knowledge-bot/
 
 ---
 
-## 🛠️ Tools & Libraries
+## Tools & Libraries
 
 - **FastAPI** – Backend API server.
 - **Streamlit** – Frontend chat interface.
@@ -58,7 +57,7 @@ conversational-knowledge-bot/
 
 ---
 
-## 💾 Memory Design
+## Memory Design
 
 We use **per-session memory** with `ConversationBufferMemory`:
 
