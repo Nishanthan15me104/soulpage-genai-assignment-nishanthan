@@ -90,7 +90,7 @@ class AgentState(TypedDict):
 ### clone repository 
 ```
 git clone https://github.com/Nishanthan15me104/soulpage-genai-assignment-nishanthan.git
-cd intelagentsys
+cd soulpage-genai-assignment-nishanthan\intelagentsys
 ```
 ### Create Virtual Environment
 

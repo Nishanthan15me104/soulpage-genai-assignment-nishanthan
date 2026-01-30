@@ -1,3 +1,8 @@
+"""2. Stateful Memory Management
+src/memory/conversation.py
+
+Purpose: Provides a centralized store for managing chat history across multiple users."""
+
 from langchain_classic.memory import ConversationBufferMemory
 
 _memory_store = {}
