@@ -70,7 +70,7 @@ We use **per-session memory** with `ConversationBufferMemory`:
 ## setup instruction
 
 ```
-git clone https://github.com/yourusername/conversational-knowledge-bot.git
+git clone https://github.com/Nishanthan15me104/soulpage-genai-assignment-nishanthan.git
 cd conversational-knowledge-bot
 
 python -m venv venv

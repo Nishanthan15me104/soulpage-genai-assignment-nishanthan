@@ -14,6 +14,21 @@ class ChatRequest(BaseModel):
 
 @app.post("/chat")
 def chat(req: ChatRequest):
+    """
+    The main API endpoint for chatting.
+    1. It fetches the conversation chain for the session.
+    2. It asks the LLM for a response.
+    3. If the LLM responds with 'SEARCH_NEEDED', it triggers a web search and 
+       feeds that data back to the LLM for a final, informed answer.
+
+    Args:
+        req (ChatRequest): A Pydantic model containing the 'message' string 
+                           and the optional 'session_id'.
+
+    Returns:
+        dict: A dictionary containing the final string "response" to be 
+              displayed in the UI.
+    """
     chain = get_conversation_chain(req.session_id)
 
     response = chain.predict(input=req.message)
