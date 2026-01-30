@@ -1,4 +1,4 @@
-# 🕵️‍♂️ Agentic Company Intelligence System
+#  Agentic Company Intelligence System
 
 A **multi-agent financial research system** built using **LangGraph**, **LangChain**, **Groq LLM**, **FastAPI**, and **Streamlit**, with **Opik (Comet) monitoring** for observability.
 
@@ -6,20 +6,20 @@ The system orchestrates specialized agents to collect live stock data and news, 
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-- 🔁 **Multi-Agent Orchestration** using LangGraph
-- 🧠 **Supervisor Agent** for dynamic routing
-- 📊 **Live Stock & News Fetching** (Yahoo Finance + DuckDuckGo)
-- 📑 **Structured Outputs** using Pydantic models
-- 🧠 **Session-based Memory** using LangGraph `MemorySaver`
-- 🌐 **FastAPI Backend** for agent execution
-- 🎨 **Streamlit UI** for interactive usage
-- 📈 **Opik (Comet) Monitoring** for tracing & observability
+- **Multi-Agent Orchestration** using LangGraph
+- **Supervisor Agent** for dynamic routing
+- **Live Stock & News Fetching** (Yahoo Finance + DuckDuckGo)
+- **Structured Outputs** using Pydantic models
+- **Session-based Memory** using LangGraph `MemorySaver`
+- **FastAPI Backend** for agent execution
+- **Streamlit UI** for interactive usage
+- **Opik (Comet) Monitoring** for tracing & observability
 
 ---
 
-## 🧱 Project structure
+## Project structure
 
 ```
 intelagentsys/
@@ -44,21 +44,26 @@ intelagentsys/
 
 ---
 
-## 🧠 Agent Responsibilities
+## Agent Responsibilities
 
-### ⚖️ Supervisor Agent
+### Agent flowchart
+
+![Agent flow](img/agentflow.png)
+
+
+### Supervisor Agent
 - Decides **which agent runs next**
 - Ensures correct execution order
 - Ends workflow once analysis is complete
 
-### 🕵️‍♂️ Data Collector Agent
+### Data Collector Agent
 - Fetches:
   - Live stock price via **Yahoo Finance**
   - Latest business news via **DuckDuckGo**
 - Falls back to **mock data** if APIs fail
 - Outputs a structured `CompanyResearchDoc`
 
-### 🧠 Analyst Agent
+### Analyst Agent
 - Consumes only collected data
 - Generates:
   - Summary
@@ -68,7 +73,7 @@ intelagentsys/
 
 ---
 
-## 🧩 State & Memory Design
+## State & Memory Design
 
 ### AgentState (Graph Memory)
 
@@ -79,21 +84,7 @@ class AgentState(TypedDict):
     research_data: Optional[CompanyResearchDoc]
     final_report: Optional[AnalystReport]
 ```
-## Project Structure
-agentic-company-intelligence/
-│
-├── src/
-│   ├── graph.py            # LangGraph workflow + Opik integration
-│   ├── nodes.py            # Agent logic (Supervisor, Collector, Analyst)
-│   ├── state.py            # Pydantic models + AgentState
-│   ├── data/
-│   │   └── mock_db.py      # Mock fallback data
-│
-├── main.py                 # FastAPI backend
-├── streamlit_ui.py         # Streamlit frontend
-├── .env                    # API keys & environment variables
-├── requirements.txt
-└── README.md
+
 
 ## Setup Instruction 
 ### clone repository 
@@ -131,3 +122,6 @@ uvicorn main:server --reload
 ```
 streamlit run streamlit_ui.py
 ```
+
+## example usecase
+![sample interaction](img/finalresult.png)

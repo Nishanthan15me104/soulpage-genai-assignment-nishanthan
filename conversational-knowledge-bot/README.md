@@ -101,4 +101,4 @@ streamlit run streamlit_app.py
 
 ## Example Usage screenshot
 
-![RAG Query Results](img\sampleconvo.png)
+![RAG Query Results](img/sampleconvo.png)
